@@ -45,7 +45,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col"><input type="checkbox" id="checkAll"></th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Purchased from</th>
@@ -77,10 +77,10 @@
         })
         .then(function(items) {
             var markup = "";
-            items.forEach(function(item) {
+            items.forEach(function(item, index) {
               markup += `
                <tr class="part" id="${item.id}">
-                  <td>ID</td>
+                  <td><input type="checkbox"></td>
                   <td>${item.fields.Type}</td>
                   <td>${item.fields.Cost.toLocaleString('th-TH', { style: 'currency', currency: 'THB' })}</td>
                   <td>${item.fields['Purchased from']}</td>
