@@ -82,7 +82,7 @@
                <tr class="part" id="${item.id}">
                   <td>ID</td>
                   <td>${item.fields.Type}</td>
-                  <td>${item.fields.Cost}</td>
+                  <td>${item.fields.Cost.toLocaleString('th-TH', { style: 'currency', currency: 'THB' })}</td>
                   <td>${item.fields['Purchased from']}</td>
                   <td>${item.fields['Purchase Date']}</td>
                </tr>
