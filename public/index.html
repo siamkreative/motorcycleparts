@@ -42,22 +42,24 @@
       <h1 class="mt-5">Motorcycle Parts</h1>
       <p class="lead">Here are the different parts that I have added to to my <strong>Yamaha MT-07</strong>.</p>
       <p>This was built with node.js, express, Bootstrap 4, the fetch API and ES6 template literals.</p>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col"><input type="checkbox" id="checkAll"></th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Purchased from</th>
-            <th scope="col">Purchase Date</th>
-          </tr>
-        </thead>
-        <tbody id="results">
-          <tr>
-            <td>Loading...</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" id="checkAll"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Purchased from</th>
+              <th scope="col">Purchase Date</th>
+            </tr>
+          </thead>
+          <tbody id="results">
+            <tr>
+              <td>Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
     <footer class="footer">
@@ -66,31 +68,7 @@
       </div>
     </footer>
 
-    <script type="text/javascript">
-    // Update footer
-    document.getElementById('getFullYear').innerHTML = new Date().getFullYear();
-
-    // Fetch data from node server
-    fetch('/get')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(items) {
-            var markup = "";
-            items.forEach(function(item, index) {
-              markup += `
-               <tr class="part" id="${item.id}">
-                  <td><input type="checkbox"></td>
-                  <td>${item.fields.Type}</td>
-                  <td>${item.fields.Cost.toLocaleString('th-TH', { style: 'currency', currency: 'THB' })}</td>
-                  <td>${item.fields['Purchased from']}</td>
-                  <td>${item.fields['Purchase Date']}</td>
-               </tr>
-              `;              
-            });
-            document.getElementById('results').innerHTML = markup;
-        });
-    </script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
