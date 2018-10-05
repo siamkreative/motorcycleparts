@@ -20,15 +20,17 @@ window.fetch('/get')
   })
   .then(function (items) {
     var markup = ''
+    var formattedCost
     items.forEach(function (item, index) {
+      formattedCost = item.fields.Cost.toLocaleString('th-TH', {
+        style: 'currency',
+        currency: 'THB'
+      })
       markup += `
            <tr class="part" id="${item.id}">
               <td><input type="checkbox"></td>
               <td>${item.fields.Type}</td>
-              <td>${item.fields.Cost.toLocaleString('th-TH', {
-    style: 'currency',
-    currency: 'THB'
-  })}</td>
+              <td>${formattedCost}</td>
               <td>${item.fields['Purchased from']}</td>
               <td>${item.fields['Purchase Date']}</td>
            </tr>
