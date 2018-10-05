@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npm run start:dev",
+    "start": "npm run start:prod",
     "start:dev": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production node server.js",
     "tests": "standard"
