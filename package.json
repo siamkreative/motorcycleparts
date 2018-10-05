@@ -2,7 +2,8 @@
   "scripts": {
     "start": "npm run start:dev",
     "start:dev": "nodemon server.js",
-    "start:prod": "cross-env NODE_ENV=production node server.js"
+    "start:prod": "cross-env NODE_ENV=production node server.js",
+    "tests": "standard"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "cross-env": "^5.2.0",
+    "eslint-config-prettier": "^3.1.0",
     "nodemon": "^1.18.4"
   }
 }
