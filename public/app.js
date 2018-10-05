@@ -1,6 +1,16 @@
 // Update footer
 document.getElementById('getFullYear').innerHTML = new Date().getFullYear();
 
+// Select all checkboxes
+checkAll.addEventListener('change', (event) => {
+  const checkAll = document.getElementById('checkAll')
+  const checkboxes = document.querySelectorAll('.table > tbody [type="checkbox"]')
+
+  checkboxes.forEach(function(el) {
+    el.checked = event.target.checked
+  })
+})
+
 // Fetch data from node server
 fetch('/get')
     .then(function(response) {
