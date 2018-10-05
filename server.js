@@ -1,9 +1,11 @@
 require('dotenv').config()
+const browserSync = require('browser-sync')
 const express = require('express')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
 const app = express()
 const port = 3000
+const isProduction = 'production' === process.env.NODE_ENV;
 
 /**
  * Airtable Parameters
@@ -26,4 +28,18 @@ app.get('/get', bodyParser.json(), async (req, res) => {
 
 app.use('/', express.static('public'))
 
-app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`))
+app.listen(process.env.PORT || port, listening);
+
+function listening() {
+	console.log(`App listening on port ${port}!`)
+	if (!isProduction) {
+		browserSync({
+			files: ['public/**/*.{html,js,css}'],
+			online: false,
+			open: false,
+			port: port + 1,
+			proxy: 'localhost:' + port,
+			ui: false
+		})
+	}
+}
