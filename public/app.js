@@ -1,6 +1,3 @@
-// Update footer
-document.getElementById('getFullYear').innerHTML = new Date().getFullYear()
-
 // Select all checkboxes
 const checkAll = document.getElementById('checkAll')
 checkAll.addEventListener('change', event => {
@@ -21,7 +18,9 @@ window.fetch('/get')
   .then(function (items) {
     var markup = ''
     var formattedCost
+    var total = 0
     items.forEach(function (item, index) {
+      total += item.fields.Cost
       formattedCost = item.fields.Cost.toLocaleString('th-TH', {
         style: 'currency',
         currency: 'THB'
@@ -35,6 +34,10 @@ window.fetch('/get')
               <td>${item.fields['Purchase Date']}</td>
            </tr>
           `
+    })
+    document.getElementById('total').innerHTML = total.toLocaleString('th-TH', {
+      style: 'currency',
+      currency: 'THB'
     })
     document.getElementById('results').innerHTML = markup
   })
