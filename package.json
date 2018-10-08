@@ -3,7 +3,8 @@
     "start": "npm run start:prod",
     "start:dev": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production node server.js",
-    "tests": "standard"
+    "tests": "standard",
+    "deploy": "now --public --dotenv"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
