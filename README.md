@@ -14,4 +14,4 @@ Then simply run the following:
 yarn install && yarn run start:dev
 ```
 
-The application will be available at [http:/localhost:3000](http://localhost:3000)
+The application will be available at [http:/localhost:3001](http://localhost:3001)
