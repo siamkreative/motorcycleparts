@@ -10,7 +10,7 @@ checkAll.addEventListener('change', event => {
   })
 })
 
-// Helper function
+// Currency helper function
 function formatCurrency (value) {
   return value.toLocaleString('th-TH', {
     style: 'currency',
@@ -20,18 +20,21 @@ function formatCurrency (value) {
 }
 
 // Fetch data from node server
-window.fetch('/get')
+window
+  .fetch('/get')
   .then(function (response) {
     return response.json()
   })
   .then(function (items) {
-    var markup = ''
-    var brandModel
-    var total = 0
+    let markup = ''
+    let brandModel
+    let total = 0
 
-    items.forEach(function (item, index) {
+    items.forEach(function (item) {
       total += item.fields.Cost
-      brandModel = item.fields['Brand / Model'] ? ` (${item.fields['Brand / Model']})` : ''
+      brandModel = item.fields['Brand / Model']
+        ? ` (${item.fields['Brand / Model']})`
+        : ''
 
       // HTML markup to be rendered
       markup += `
@@ -44,6 +47,8 @@ window.fetch('/get')
            </tr>
           `
     })
+
+    // Render data
     document.getElementById('total').innerHTML = formatCurrency(total)
     document.getElementById('results').innerHTML = markup
   })
