@@ -17,10 +17,12 @@ window.fetch('/get')
   })
   .then(function (items) {
     var markup = ''
+    var brandModel
     var formattedCost
     var total = 0
     items.forEach(function (item, index) {
       total += item.fields.Cost
+      brandModel = item.fields['Brand / Model'] ? ` (${item.fields['Brand / Model']})` : ''
       formattedCost = item.fields.Cost.toLocaleString('th-TH', {
         style: 'currency',
         currency: 'THB'
@@ -28,7 +30,7 @@ window.fetch('/get')
       markup += `
            <tr class="part" id="${item.id}">
               <td><input type="checkbox"></td>
-              <td>${item.fields.Type}</td>
+              <td>${item.fields.Type}${brandModel}</td>
               <td>${formattedCost}</td>
               <td>${item.fields['Purchased from']}</td>
               <td>${item.fields['Purchase Date']}</td>
