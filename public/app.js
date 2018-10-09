@@ -11,13 +11,12 @@ checkAll.addEventListener('change', event => {
 })
 
 // Currency helper function
-function formatCurrency (value) {
-  return value.toLocaleString('th-TH', {
+const formatCurrency = value =>
+  value.toLocaleString('th-TH', {
     style: 'currency',
     currency: 'THB',
     minimumFractionDigits: 0
   })
-}
 
 // Fetch data from node server
 window
