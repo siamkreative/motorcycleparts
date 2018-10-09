@@ -10,6 +10,15 @@ checkAll.addEventListener('change', event => {
   })
 })
 
+// Helper function
+function formatCurrency (value) {
+  return value.toLocaleString('th-TH', {
+    style: 'currency',
+    currency: 'THB',
+    minimumFractionDigits: 0
+  })
+}
+
 // Fetch data from node server
 window.fetch('/get')
   .then(function (response) {
@@ -18,28 +27,23 @@ window.fetch('/get')
   .then(function (items) {
     var markup = ''
     var brandModel
-    var formattedCost
     var total = 0
+
     items.forEach(function (item, index) {
       total += item.fields.Cost
       brandModel = item.fields['Brand / Model'] ? ` (${item.fields['Brand / Model']})` : ''
-      formattedCost = item.fields.Cost.toLocaleString('th-TH', {
-        style: 'currency',
-        currency: 'THB'
-      })
+
+      // HTML markup to be rendered
       markup += `
            <tr class="part" id="${item.id}">
               <td><input type="checkbox"></td>
               <td>${item.fields.Type}${brandModel}</td>
-              <td>${formattedCost}</td>
+              <td>${formatCurrency(item.fields.Cost)}</td>
               <td>${item.fields['Purchased from']}</td>
               <td>${item.fields['Purchase Date']}</td>
            </tr>
           `
     })
-    document.getElementById('total').innerHTML = total.toLocaleString('th-TH', {
-      style: 'currency',
-      currency: 'THB'
-    })
+    document.getElementById('total').innerHTML = formatCurrency(total)
     document.getElementById('results').innerHTML = markup
   })
