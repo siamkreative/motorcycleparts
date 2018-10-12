@@ -32,7 +32,7 @@ window
     items.forEach(function (item) {
       total += item.fields.Cost
       brandModel = item.fields['Brand / Model']
-        ? ` (${item.fields['Brand / Model']})`
+        ? ` <span class="d-none d-lg-inline">(${item.fields['Brand / Model']})</span>`
         : ''
 
       // HTML markup to be rendered
