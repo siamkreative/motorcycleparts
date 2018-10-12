@@ -51,3 +51,13 @@ window
     document.getElementById('total').innerHTML = formatCurrency(total)
     document.getElementById('results').innerHTML = markup
   })
+
+// Image gallery
+new LuminousGallery(document.querySelectorAll('.gallery'), {
+  arrowNavigation: true
+}, {
+  caption: function (trigger) {
+    return trigger.querySelector('img').getAttribute('alt')
+  }
+})
+
