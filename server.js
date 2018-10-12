@@ -1,11 +1,15 @@
 require('dotenv').config()
 const browserSync = require('browser-sync')
+const compression = require('compression')
 const express = require('express')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
 const app = express()
 const port = 3000
 const isProduction = process.env.NODE_ENV === 'production'
+
+// Compress all responses
+app.use(compression())
 
 /**
  * Airtable Parameters
