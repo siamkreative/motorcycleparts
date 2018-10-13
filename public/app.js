@@ -53,11 +53,10 @@ window
   })
 
 // Image gallery
-new LuminousGallery(document.querySelectorAll('.gallery'), {
+new LuminousGallery(document.querySelectorAll('.gallery-img'), {
   arrowNavigation: true
 }, {
   caption: function (trigger) {
     return trigger.querySelector('img').getAttribute('alt')
   }
 })
-
