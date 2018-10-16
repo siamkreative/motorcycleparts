@@ -18,7 +18,8 @@ app.use(compression())
 const key = process.env.AT_API_KEY
 const base = process.env.AT_BASE
 const table = process.env.AT_TABLE
-const endpoint = `https://api.airtable.com/v0/${base}/${table}?maxRecords=20`
+const sort = encodeURI('sort[0][field]=Purchase+Date&sort[0][direction]=asc')
+const endpoint = `https://api.airtable.com/v0/${base}/${table}?maxRecords=20&${sort}`
 
 app.get('/get', bodyParser.json(), async (req, res) => {
   var resp = await fetch(endpoint, {
