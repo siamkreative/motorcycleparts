@@ -36,6 +36,7 @@ app.get('/get', bodyParser.json(), async (req, res) => {
     }
   })
   const json = await resp.json()
+  res.set('Cache-Control', 'public, max-age=604800')
   res.json(json.records)
 })
 
