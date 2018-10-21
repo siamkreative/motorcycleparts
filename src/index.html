@@ -8,35 +8,21 @@
 </head>
 
 <body>
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/SiamKreative/motorcycleparts">Github</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://twitter.com/siamkreative">Message me</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <header class="navbar">
+      <section class="navbar-section">
+        <a class="btn btn-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="btn btn-link" href="https://github.com/SiamKreative/motorcycleparts">Github</a>
+        <a class="btn btn-link" href="https://twitter.com/siamkreative">Message me</a>
+      </section>
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="container">
-      <h1 class="mt-5">Motorcycle Parts</h1>
+    <main role="main" class="container grid-lg">
+      <h1>Motorcycle Parts</h1>
       <p class="lead">Here are the different parts that I have added to to my <strong>Yamaha MT-07</strong> which add up to <strong id="total">-</strong>.</p>
       <p>This was built with node.js, express, Bootstrap 4, the fetch API and ES6 template literals. The data comes from Airtable.</p>
       <div class="table-responsive">
-        <table class="table table-hover my-5" id="parts">
+        <table class="table table-hover" id="parts">
           <thead>
             <tr>
               <th scope="col" data-sort-method="none"><input type="checkbox" id="checkAll"></th>
@@ -53,19 +39,19 @@
           </tbody>
         </table>
       </div>
-      <div class="gallery mb-5">
-        <div class="row">
-          <div class="col-md-4">
+      <div class="gallery">
+        <div class="columns">
+          <div class="column col-md-4">
             <a class="gallery-img" href="https://instagram.fbkk1-5.fna.fbcdn.net/vp/0405a93e769cbb7c460d3bb0885d2981/5C4E5739/t51.2885-15/e35/40086063_2202040616707438_192892062209671168_n.jpg">
               <img class="img-fluid" src="https://res.cloudinary.com/demo/image/fetch/w_350,h_262,c_fill/https://instagram.fbkk1-5.fna.fbcdn.net/vp/0405a93e769cbb7c460d3bb0885d2981/5C4E5739/t51.2885-15/e35/40086063_2202040616707438_192892062209671168_n.jpg" alt="After today's ride she deserved a good shower. Follow for more bike pics 😎">
             </a>
           </div>
-          <div class="col-md-4">
+          <div class="column col-md-4">
             <a class="gallery-img" href="https://instagram.fbkk1-5.fna.fbcdn.net/vp/9686814c2efc602115d500f4c1d95295/5C60DDA6/t51.2885-15/e35/30084345_614645722212388_5419215933946200064_n.jpg">
               <img class="img-fluid" src="https://res.cloudinary.com/demo/image/fetch/w_350,h_262,c_fill/https://instagram.fbkk1-5.fna.fbcdn.net/vp/9686814c2efc602115d500f4c1d95295/5C60DDA6/t51.2885-15/e35/30084345_614645722212388_5419215933946200064_n.jpg" alt="A #yamaha #mt07 lost in the jungle near Wat Rai Khing">
             </a>
           </div>
-          <div class="col-md-4">
+          <div class="column col-md-4">
             <a class="gallery-img" href="https://instagram.fbkk2-5.fna.fbcdn.net/vp/75ed0189032eb6bcfb410fe71c9e23e6/5C553888/t51.2885-15/e35/42583790_275505453297089_121905000448284343_n.jpg">
               <img class="img-fluid" src="https://res.cloudinary.com/demo/image/fetch/w_350,h_262,c_fill/https://instagram.fbkk2-5.fna.fbcdn.net/vp/75ed0189032eb6bcfb410fe71c9e23e6/5C553888/t51.2885-15/e35/42583790_275505453297089_121905000448284343_n.jpg" alt="Lost in Bangkok's jungle">
             </a>
