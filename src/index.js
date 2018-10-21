@@ -1,7 +1,7 @@
 // Inport CSS
 import 'spectre.css/dist/spectre.min.css'
 import 'luminous-lightbox/dist/luminous-basic.css'
-import './app.css'
+import './index.css'
 
 // Import JavaScript
 import { Luminous, LuminousGallery } from 'luminous-lightbox'
