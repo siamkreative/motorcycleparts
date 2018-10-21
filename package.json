@@ -3,6 +3,7 @@
     "start": "npm run start:prod",
     "start:dev": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production node server.js",
+    "build": "parcel build src/index.html -d public",
     "tests": "standard",
     "deploy": "now --public --dotenv"
   },
