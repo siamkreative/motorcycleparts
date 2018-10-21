@@ -5,16 +5,16 @@ const Bundler = require('parcel-bundler')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
 const Path = require('path')
-
+const app = express()
 const port = 3000
 const isProduction = process.env.NODE_ENV === 'production'
 
+// Parcel Bundler config
 const entryFiles = Path.join(__dirname, './src/index.html')
 const options = {
   outDir: './public'
 }
 let bundler = new Bundler(entryFiles, options)
-let app = express()
 
 // Compress all responses
 app.use(compression())
@@ -40,14 +40,9 @@ app.get('/get', bodyParser.json(), async (req, res) => {
   res.json(json.records)
 })
 
-if (!isProduction) {
-  app.use(bundler.middleware())
-} else {
-  app.use('/', express.static('public'))
-}
+// Use parcel as middleware in development only
+isProduction
+  ? app.use('/', express.static('public'))
+  : app.use(bundler.middleware())
 
-app.listen(process.env.PORT || port, listening)
-
-function listening () {
-  console.log(`App listening on port ${port}!`)
-}
+app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`))
