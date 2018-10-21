@@ -1,3 +1,11 @@
+// Inport CSS
+import 'spectre.css/dist/spectre.min.css'
+import 'luminous-lightbox/dist/luminous-basic.css'
+import './index.css'
+
+// Import JavaScript
+import { LuminousGallery } from 'luminous-lightbox'
+
 // Select all checkboxes
 const checkAll = document.getElementById('checkAll')
 checkAll.addEventListener('change', event => {
@@ -53,6 +61,7 @@ window
   })
 
 // Image gallery
+// eslint-disable-next-line no-new
 new LuminousGallery(document.querySelectorAll('.gallery-img'), {
   arrowNavigation: true
 }, {

@@ -1,12 +1,20 @@
 require('dotenv').config()
-const browserSync = require('browser-sync')
 const compression = require('compression')
 const express = require('express')
+const Bundler = require('parcel-bundler')
 const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
-const app = express()
+const Path = require('path')
+
 const port = 3000
 const isProduction = process.env.NODE_ENV === 'production'
+
+const entryFiles = Path.join(__dirname, './src/index.html')
+const options = {
+  outDir: './public'
+}
+let bundler = new Bundler(entryFiles, options)
+let app = express()
 
 // Compress all responses
 app.use(compression())
@@ -31,20 +39,14 @@ app.get('/get', bodyParser.json(), async (req, res) => {
   res.json(json.records)
 })
 
-app.use('/', express.static('public'))
+if (!isProduction) {
+  app.use(bundler.middleware())
+} else {
+  app.use('/', express.static('public'))
+}
 
 app.listen(process.env.PORT || port, listening)
 
 function listening () {
   console.log(`App listening on port ${port}!`)
-  if (!isProduction) {
-    browserSync({
-      files: ['public/**/*.{html,js,css}'],
-      online: false,
-      open: false,
-      port: port + 1,
-      proxy: 'localhost:' + port,
-      ui: false
-    })
-  }
 }
