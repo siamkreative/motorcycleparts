@@ -1,5 +1,4 @@
 require('dotenv').config()
-const browserSync = require('browser-sync')
 const compression = require('compression')
 const express = require('express')
 const Bundler = require('parcel-bundler')
