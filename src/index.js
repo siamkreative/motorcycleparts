@@ -4,7 +4,7 @@ import 'luminous-lightbox/dist/luminous-basic.css'
 import './index.css'
 
 // Import JavaScript
-import { Luminous, LuminousGallery } from 'luminous-lightbox'
+import { LuminousGallery } from 'luminous-lightbox'
 
 // Select all checkboxes
 const checkAll = document.getElementById('checkAll')
@@ -61,6 +61,7 @@ window
   })
 
 // Image gallery
+// eslint-disable-next-line no-new
 new LuminousGallery(document.querySelectorAll('.gallery-img'), {
   arrowNavigation: true
 }, {
