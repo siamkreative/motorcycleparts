@@ -42,7 +42,7 @@ img {
 }
 
 body > .container {
-  padding: 60px 15px 0;
+  padding: 60px 15px;
 }
 
 .table-hover tbody tr {
@@ -50,7 +50,7 @@ body > .container {
 }
 
 .gallery {
-	margin: 3rem auto;
+	margin: 1rem auto;
 }
 
 .gallery img {
@@ -65,9 +65,16 @@ body > .container {
   transition: 160ms opacity ease-out;
 }
 
+.lum-lightbox-image-wrapper {
+  position: relative;
+}
+
 .lum-lightbox-inner .lum-lightbox-caption {
   background: rgba(0, 0, 0, 0.50);
-  padding: .5rem 1rem;
+  padding: .5rem;
   border-radius: 3px;
-  margin-top: 1rem;
+  line-height: 1;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }
