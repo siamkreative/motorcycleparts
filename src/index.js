@@ -47,12 +47,12 @@ window
 
       // HTML markup to be rendered
       markup += `
-           <tr class="part" id="${item.id}">
-              <td><input type="checkbox"></td>
-              <td>${item.fields.Type}${brandModel}</td>
-              <td>${formatCurrency(item.fields.Cost)}</td>
-              <td>${item.fields['Purchased from']}</td>
-              <td>${item.fields['Purchase Date']}</td>
+           <tr id="${item.id}">
+              <td class="cell-checkbox"><input type="checkbox"></td>
+              <td class="cell-text">${item.fields.Type}${brandModel}</td>
+              <td class="cell-date">${item.fields['Purchased from']}</td>
+              <td class="cell-date">${item.fields['Purchase Date']}</td>
+              <td class="cell-number bg-secondary">${formatCurrency(item.fields.Cost)}</td>
            </tr>
           `
     })

@@ -49,6 +49,19 @@ body > .container {
   transition: background 150ms ease-out;
 }
 
+.table-hover thead [data-sort-method="number"],
+.table-hover tbody .cell-number {
+  text-align: right;
+}
+
+.table-hover tbody .cell-number {
+  border: 1px solid #ccc;
+}
+
+.table.table-hover tbody tr:hover .cell-number {
+  font-weight: bold;
+}
+
 .gallery {
   margin: 1rem auto;
 }
