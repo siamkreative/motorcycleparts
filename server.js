@@ -45,4 +45,6 @@ isProduction
   ? app.use('/', express.static('public'))
   : app.use(bundler.middleware())
 
-app.listen(process.env.PORT || port, () => console.log(`App listening on port ${port}!`))
+app.listen(process.env.PORT || port, () =>
+  console.log(`App listening on port ${port}!`)
+)

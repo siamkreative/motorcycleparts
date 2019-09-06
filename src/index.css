@@ -1,33 +1,33 @@
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .navbar {
-	background-color: #343a40;
+  background-color: #343a40;
 }
 
 .navbar .btn {
-	color: rgba(255,255,255,.5);
-	height: 2.4rem;
-  padding: .5rem .4rem;
+  color: rgba(255, 255, 255, 0.5);
+  height: 2.4rem;
+  padding: 0.5rem 0.4rem;
 }
 
 .navbar .btn:hover {
-	color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .navbar .btn.active {
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .navbar .navbar-section {
-	justify-content: center;
+  justify-content: center;
 }
 
 .lead {
-	font-size: 1.25rem;
-	font-weight: 300;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 .sr-only {
@@ -50,7 +50,7 @@ body > .container {
 }
 
 .gallery {
-	margin: 1rem auto;
+  margin: 1rem auto;
 }
 
 .gallery img {
@@ -70,8 +70,8 @@ body > .container {
 }
 
 .lum-lightbox-inner .lum-lightbox-caption {
-  background: rgba(0, 0, 0, 0.50);
-  padding: .5rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
   border-radius: 3px;
   line-height: 1;
   position: absolute;

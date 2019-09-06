@@ -40,7 +40,9 @@ window
     items.forEach(function (item) {
       total += item.fields.Cost
       brandModel = item.fields['Brand / Model']
-        ? ` <span class="d-none d-lg-inline">(${item.fields['Brand / Model']})</span>`
+        ? ` <span class="d-none d-lg-inline">(${
+          item.fields['Brand / Model']
+        })</span>`
         : ''
 
       // HTML markup to be rendered
@@ -62,10 +64,14 @@ window
 
 // Image gallery
 // eslint-disable-next-line no-new
-new LuminousGallery(document.querySelectorAll('.gallery-img'), {
-  arrowNavigation: true
-}, {
-  caption: function (trigger) {
-    return trigger.querySelector('img').getAttribute('alt')
+new LuminousGallery(
+  document.querySelectorAll('.gallery-img'),
+  {
+    arrowNavigation: true
+  },
+  {
+    caption: function (trigger) {
+      return trigger.querySelector('img').getAttribute('alt')
+    }
   }
-})
+)
