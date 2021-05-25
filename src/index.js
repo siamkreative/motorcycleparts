@@ -28,7 +28,7 @@ const formatCurrency = value =>
 
 // Fetch data from node server
 window
-  .fetch('/get')
+  .fetch('/.netlify/functions/get-airtable-data')
   .then(function (response) {
     return response.json()
   })
@@ -37,7 +37,7 @@ window
     let brandModel
     let total = 0
 
-    items.forEach(function (item) {
+    items.records.forEach(function (item) {
       total += item.fields.Cost
       brandModel = item.fields['Brand / Model']
         ? ` <span class="d-none d-lg-inline">(${

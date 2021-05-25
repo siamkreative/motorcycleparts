@@ -1,4 +1,7 @@
 /node_modules
-/public
+/dist
 .env
 .cache/
+.idea/
+# Local Netlify folder
+.netlify
