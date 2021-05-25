@@ -1,25 +1,18 @@
 {
   "scripts": {
-    "start": "npm run build && npm run start:prod",
-    "start:dev": "nodemon server.js",
-    "start:prod": "node server.js",
-    "build": "parcel build src/index.html -d public",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html -d dist",
     "tests": "standard"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
     "luminous-lightbox": "^2.3.2",
-    "node-fetch": "^2.6.0",
     "spectre.css": "^0.5.8"
   },
   "devDependencies": {
+    "airtable": "^0.11.1",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.2.0",
-    "nodemon": "^1.19.2",
-    "standard": "^14.1.0",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "standard": "^14.1.0"
   }
 }
