@@ -7,7 +7,7 @@
 This experiment was built with node.js, express, Parcel, Spectre, the fetch API and ES6 template literals. The data comes from [this Airtable](https://airtable.com/shrxx5mmDuAAjnc7J).
 
 ## Getting started
-First you need to create an `.env` file which will contain the following the [Airtable](https://airtable.com/) info:
+First, head to https://airtable.com/create/tokens to create the API token (`AT_API_KEY`). Then, create an `.env` file which will contain the following Airtable info:
 ```
 AT_API_KEY=XXXXX
 AT_BASE=XXXXX
