@@ -109,25 +109,25 @@ export default function App() {
         className={`transition-[opacity,transform] duration-700 ease-out ${filmstripInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         <div className="grid grid-cols-3 gap-0.5 bg-white/5">
-          <a className="glightbox block overflow-hidden group" href="images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
+          <a className="glightbox block overflow-hidden group" href="/images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
             <picture>
-              <source srcSet="images/01.avif" type="image/avif" />
-              <source srcSet="images/01.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/01.jpg" alt="Bike trip around Khao Yai, Thailand" />
+              <source srcSet="/images/01.avif" type="image/avif" />
+              <source srcSet="/images/01.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/01.jpg" alt="Bike trip around Khao Yai, Thailand" />
             </picture>
           </a>
-          <a className="glightbox block overflow-hidden group" href="images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
+          <a className="glightbox block overflow-hidden group" href="/images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
             <picture>
-              <source srcSet="images/02.avif" type="image/avif" />
-              <source srcSet="images/02.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/02.jpg" alt="Racing at Bira Circuit, Pattaya" />
+              <source srcSet="/images/02.avif" type="image/avif" />
+              <source srcSet="/images/02.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/02.jpg" alt="Racing at Bira Circuit, Pattaya" />
             </picture>
           </a>
-          <a className="glightbox block overflow-hidden group" href="images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
+          <a className="glightbox block overflow-hidden group" href="/images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
             <picture>
-              <source srcSet="images/03.avif" type="image/avif" />
-              <source srcSet="images/03.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/03.jpg" alt="After the shower, Samut Prakan" />
+              <source srcSet="/images/03.avif" type="image/avif" />
+              <source srcSet="/images/03.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/03.jpg" alt="After the shower, Samut Prakan" />
             </picture>
           </a>
         </div>
