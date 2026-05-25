@@ -3,5 +3,6 @@
 .env
 .cache/
 .idea/
+.vscode/
 # Local Netlify folder
 .netlify
