@@ -6,11 +6,22 @@
   },
   "dependencies": {
     "alpinejs": "^3.14.0",
-    "glightbox": "^3.3.0"
+    "clsx": "^2.1.1",
+    "glightbox": "^3.3.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwind-merge": "^3.6.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.184.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "tailwindcss": "^4.1.0",
+    "typescript": "^6.0.3",
     "vite": "^6.3.0"
   }
 }

@@ -7,84 +7,8 @@
     <title>Yamaha MT-07 Parts</title>
   </head>
 
-  <body class="bg-white text-gray-900 antialiased">
-    <header class="bg-gray-800">
-      <nav class="flex justify-center gap-1 px-4 py-2">
-        <a class="text-white px-3 py-2 text-sm font-medium rounded hover:bg-gray-700 transition-colors" href="/">Home</a>
-        <a class="text-gray-400 hover:text-gray-200 px-3 py-2 text-sm rounded hover:bg-gray-700 transition-colors" href="https://github.com/SiamKreative/motorcycleparts">Github</a>
-        <a class="text-gray-400 hover:text-gray-200 px-3 py-2 text-sm rounded hover:bg-gray-700 transition-colors" href="https://twitter.com/siamkreative">Message me</a>
-      </nav>
-    </header>
-
-    <main class="container mx-auto max-w-5xl px-4 py-16">
-      <h1 class="text-3xl font-bold text-center mb-10">Yamaha MT-07 Customizations</h1>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <a class="glightbox block" href="images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
-          <img class="w-full h-auto rounded-md object-cover" src="images/01.jpg" alt="Bike trip around Khao Yai, Thailand (August 2019)" />
-        </a>
-        <a class="glightbox block" href="images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
-          <img class="w-full h-auto rounded-md object-cover" src="images/02.jpg" alt="Me racing at Bira Circuit (Pattaya, Thailand)" />
-        </a>
-        <a class="glightbox block" href="images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
-          <img class="w-full h-auto rounded-md object-cover" src="images/03.jpg" alt="After the shower (Samut Prakan, Thailand)" />
-        </a>
-      </div>
-      <p class="text-center text-sm text-gray-500 mb-10">
-        More pics on <a class="underline hover:text-gray-700" href="https://www.instagram.com/siamkreative/">my instagram</a>
-      </p>
-
-      <div x-data="parts">
-        <p class="text-lg font-light mb-2">
-          Parts added to my <strong class="font-semibold">Yamaha MT-07</strong>, totalling
-          <strong class="font-semibold" x-text="totalText">—</strong>.
-        </p>
-        <p class="text-sm text-gray-500 mb-6">
-          Built with Vite, Tailwind CSS v4, Alpine.js and Netlify Functions. Data from
-          <a class="underline hover:text-gray-700" href="https://airtable.com/shrxx5mmDuAAjnc7J">Airtable</a>.
-        </p>
-
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-gray-200 text-left">
-                <th class="py-3 pr-4 w-8 font-semibold text-gray-700">
-                  <input type="checkbox" x-model="allChecked" @change="toggleAll" class="cursor-pointer" />
-                </th>
-                <th class="py-3 pr-4 font-semibold text-gray-700">Name</th>
-                <th class="py-3 pr-4 font-semibold text-gray-700">Purchased from</th>
-                <th class="py-3 pr-4 font-semibold text-gray-700">Purchase Date</th>
-                <th class="py-3 font-semibold text-gray-700 text-right">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <template x-if="loading">
-                <tr>
-                  <td colspan="5" class="py-12 text-center text-gray-400">Loading…</td>
-                </tr>
-              </template>
-              <template x-for="record in records" :key="record.id">
-                <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-150">
-                  <td class="py-3 pr-4">
-                    <input type="checkbox" x-model="record.checked" class="cursor-pointer" />
-                  </td>
-                  <td class="py-3 pr-4">
-                    <span x-text="record.fields.Type"></span>
-                    <template x-if="record.fields['Brand / Model']">
-                      <span class="hidden lg:inline text-gray-400" x-text="'(' + record.fields['Brand / Model'] + ')'"></span>
-                    </template>
-                  </td>
-                  <td class="py-3 pr-4 text-gray-600" x-text="record.fields['Purchased from']"></td>
-                  <td class="py-3 pr-4 text-gray-600" x-text="record.fields['Purchase Date']"></td>
-                  <td class="py-3 text-right font-mono text-gray-800" x-text="formatCurrency(record.fields.Cost || 0)"></td>
-                </tr>
-              </template>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </main>
-
-    <script type="module" src="./index.js"></script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
   </body>
 </html>
