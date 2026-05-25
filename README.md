@@ -4,19 +4,39 @@
 - [Demo site](https://motorcycleparts.netlify.app/)
 
 ## About
-This experiment was built with node.js, express, Parcel, Spectre, the fetch API and ES6 template literals. The data comes from [this Airtable](https://airtable.com/shrxx5mmDuAAjnc7J).
+
+Personal page listing aftermarket parts added to a Yamaha MT-07, with a photo gallery. Built with Vite, Tailwind CSS v4, Alpine.js, and GLightbox. Data comes from [this Airtable](https://airtable.com/shrxx5mmDuAAjnc7J), served via a Netlify Function to keep the API key server-side.
 
 ## Getting started
-First, head to https://airtable.com/create/tokens to create the API token (`AT_API_KEY`). Then, create an `.env` file which will contain the following Airtable info:
+
+Create a `.env` file with your Airtable credentials (get an API token at https://airtable.com/create/tokens):
+
 ```
 AT_API_KEY=XXXXX
 AT_BASE=XXXXX
 AT_TABLE=XXXXX
 ```
 
-Then simply run the following:
-```
-yarn install && yarn run start:dev
+Install dependencies:
+
+```bash
+npm install
 ```
 
-The application will be available at [http:/localhost:3001](http://localhost:3001)
+Run the full stack locally (Vite + Netlify Function):
+
+```bash
+netlify dev
+```
+
+Or run Vite only (UI works, Airtable data won't load):
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```

@@ -1,6 +1,7 @@
 [dev]
-  framework = "parcel"
   command = "npm run dev"
+  targetPort = 5173
+
 [build]
   publish = "dist"
   command = "npm run build"
