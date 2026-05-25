@@ -80,23 +80,37 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="container mx-auto max-w-5xl px-4 py-20">
-
-        {/* Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-          <a className="glightbox block rounded-lg overflow-hidden ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300" href="images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
-            <img className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" src="images/01.jpg" alt="Bike trip around Khao Yai, Thailand" />
+      {/* Full-bleed filmstrip */}
+      <section>
+        <div className="grid grid-cols-3 gap-0.5 bg-white/5">
+          <a className="glightbox block overflow-hidden group" href="images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
+            <picture>
+              <source srcSet="images/01.avif" type="image/avif" />
+              <source srcSet="images/01.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/01.jpg" alt="Bike trip around Khao Yai, Thailand" />
+            </picture>
           </a>
-          <a className="glightbox block rounded-lg overflow-hidden ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300" href="images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
-            <img className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" src="images/02.jpg" alt="Racing at Bira Circuit, Pattaya" />
+          <a className="glightbox block overflow-hidden group" href="images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
+            <picture>
+              <source srcSet="images/02.avif" type="image/avif" />
+              <source srcSet="images/02.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/02.jpg" alt="Racing at Bira Circuit, Pattaya" />
+            </picture>
           </a>
-          <a className="glightbox block rounded-lg overflow-hidden ring-1 ring-white/10 hover:ring-white/30 transition-all duration-300" href="images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
-            <img className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500" src="images/03.jpg" alt="After the shower, Samut Prakan" />
+          <a className="glightbox block overflow-hidden group" href="images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
+            <picture>
+              <source srcSet="images/03.avif" type="image/avif" />
+              <source srcSet="images/03.webp" type="image/webp" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="images/03.jpg" alt="After the shower, Samut Prakan" />
+            </picture>
           </a>
         </div>
-        <p className="text-center text-xs text-white/30 mb-20 tracking-wide">
-          More on <a className="underline underline-offset-4 hover:text-white/60 transition-colors" href="https://www.instagram.com/siamkreative/">instagram</a>
+        <p className="text-center text-xs text-white/25 py-4 tracking-wide">
+          More on <a className="underline underline-offset-4 hover:text-white/50 transition-colors" href="https://www.instagram.com/siamkreative/">instagram</a>
         </p>
+      </section>
+
+      <main className="container mx-auto max-w-5xl px-4 py-20">
 
         {/* Parts table */}
         <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
