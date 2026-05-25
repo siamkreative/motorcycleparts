@@ -30,6 +30,10 @@ AT_TABLE=your_table_name
 
 Then use `netlify dev` (not `npm run dev`). See issue #27.
 
+## Git workflow
+
+Always create a dedicated branch for each fix or feature — never commit onto an existing feature branch unless the work is directly related to that branch's purpose. Use descriptive names like `fix/images-404` or `feat/dark-mode`.
+
 ## Data
 
 Parts data lives in [this Airtable base](https://airtable.com/shrxx5mmDuAAjnc7J). The function fetches up to 100 records from the `Grid view` and caches the response for 5 minutes (`cache-control: max-age=300, public`).
