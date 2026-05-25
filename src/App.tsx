@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import GLightbox from 'glightbox'
 import 'glightbox/dist/css/glightbox.min.css'
 import { ShaderAnimation } from '@/components/ui/shader-animation'
@@ -24,9 +24,29 @@ export default function App() {
   const [records, setRecords] = useState<Part[]>([])
   const [loading, setLoading] = useState(true)
   const [allChecked, setAllChecked] = useState(false)
+  const filmstripRef = useRef<HTMLElement>(null)
+  const partsRef = useRef<HTMLDivElement>(null)
+  const [filmstripInView, setFilmstripInView] = useState(false)
+  const [partsInView, setPartsInView] = useState(false)
 
   const total = records.reduce((sum, r) => sum + (r.fields.Cost || 0), 0)
   const totalText = loading ? '—' : formatCurrency(total)
+
+  useEffect(() => {
+    const targets: [React.RefObject<Element | null>, (v: boolean) => void][] = [
+      [filmstripRef, setFilmstripInView],
+      [partsRef, setPartsInView],
+    ]
+    const observers = targets.map(([ref, setState]) => {
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) { setState(true); obs.disconnect() } },
+        { threshold: 0.1 }
+      )
+      if (ref.current) obs.observe(ref.current)
+      return obs
+    })
+    return () => observers.forEach(obs => obs.disconnect())
+  }, [])
 
   useEffect(() => {
     fetch('/.netlify/functions/get-airtable-data')
@@ -65,10 +85,13 @@ export default function App() {
             Aftermarket Customizations
           </p>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+        <button
+          onClick={() => filmstripRef.current?.scrollIntoView({ behavior: 'smooth' })}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-colors cursor-pointer"
+        >
           <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent" />
-        </div>
+          <div className="w-px h-10 bg-gradient-to-b from-current to-transparent animate-bounce" />
+        </button>
       </div>
 
       {/* Sticky nav */}
@@ -81,7 +104,10 @@ export default function App() {
       </nav>
 
       {/* Full-bleed filmstrip */}
-      <section>
+      <section
+        ref={filmstripRef}
+        className={`transition-[opacity,transform] duration-700 ease-out ${filmstripInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+      >
         <div className="grid grid-cols-3 gap-0.5 bg-white/5">
           <a className="glightbox block overflow-hidden group" href="images/01.jpg" data-description="Bike trip around Khao Yai, Thailand (August 2019)">
             <picture>
@@ -113,7 +139,10 @@ export default function App() {
       <main className="container mx-auto max-w-5xl px-4 py-20">
 
         {/* Parts table */}
-        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
+        <div
+          ref={partsRef}
+          className={`rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8 transition-[opacity,transform] duration-700 ease-out ${partsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+        >
           <div className="mb-8">
             <h2 className="text-2xl font-semibold tracking-tight mb-2">Parts List</h2>
             <p className="text-sm text-white/40">
