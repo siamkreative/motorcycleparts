@@ -5,6 +5,8 @@
 
 ## About
 
+<img width="2293" height="3424" alt="image" src="https://github.com/user-attachments/assets/70c5f08c-880b-4111-83d4-8923e25ea7b8" />
+
 Personal page listing aftermarket parts added to a Yamaha MT-07, with a photo gallery. Built with Vite, Tailwind CSS v4, Alpine.js, and GLightbox. Data comes from [this Airtable](https://airtable.com/shrxx5mmDuAAjnc7J), served via a Netlify Function to keep the API key server-side.
 
 ## Getting started
