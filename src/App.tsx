@@ -113,21 +113,21 @@ export default function App() {
             <picture>
               <source srcSet="/images/01.avif" type="image/avif" />
               <source srcSet="/images/01.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/01.jpg" alt="Bike trip around Khao Yai, Thailand" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/01.jpg" alt="Bike trip around Khao Yai, Thailand" loading="lazy" />
             </picture>
           </a>
           <a className="glightbox block overflow-hidden group" href="/images/02.jpg" data-description="Me racing at Bira Circuit (Pattaya, Thailand)">
             <picture>
               <source srcSet="/images/02.avif" type="image/avif" />
               <source srcSet="/images/02.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/02.jpg" alt="Racing at Bira Circuit, Pattaya" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/02.jpg" alt="Racing at Bira Circuit, Pattaya" loading="lazy" />
             </picture>
           </a>
           <a className="glightbox block overflow-hidden group" href="/images/03.jpg" data-description="After the shower (Samut Prakan, Thailand)">
             <picture>
               <source srcSet="/images/03.avif" type="image/avif" />
               <source srcSet="/images/03.webp" type="image/webp" />
-              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/03.jpg" alt="After the shower, Samut Prakan" />
+              <img className="w-full aspect-[4/5] object-cover brightness-90 group-hover:brightness-100 group-hover:scale-[1.02] transition-all duration-500 ease-out" src="/images/03.jpg" alt="After the shower, Samut Prakan" loading="lazy" />
             </picture>
           </a>
         </div>
@@ -161,6 +161,7 @@ export default function App() {
                       checked={allChecked}
                       onChange={e => toggleAll(e.target.checked)}
                       className="cursor-pointer accent-white"
+                      aria-label="Select all parts"
                     />
                   </th>
                   <th className="pb-3 pr-4 font-medium text-white/40 text-xs uppercase tracking-wider">Name</th>
@@ -186,6 +187,7 @@ export default function App() {
                           checked={record.checked}
                           onChange={() => toggleOne(record.id)}
                           className="cursor-pointer accent-white"
+                          aria-label={`Select ${record.fields.Type}`}
                         />
                       </td>
                       <td className="py-3 pr-4 text-white/90">
